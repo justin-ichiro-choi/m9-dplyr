@@ -4,20 +4,22 @@
 install.packages('devtools')
 
 # Install "fueleconomy" package from GitHub
-devtools::install_github("hadley/fueleconomy")
+devtools::install_github("hadley/fueleconomy", force=TRUE)
 
 # Require/library the fueleconomy package
-
+require(fueleconomy)
 
 # You should have have access to the `vehicles` data.frame
 
+my.data <- vehicles;
 
 # Create a data.frame of vehicles from 1997
 
+cars.1997 <- my.data[vehicles$year == 1997,]
+
 
 # Use the `unique` function to verify that there is only 1 value in the `year` column of your new data.frame
-
-
+unique(cars.1997$year)
 # Create a data.frame of 2-Wheel Drive vehicles that get more than 20 miles/gallon in the city
 
 
